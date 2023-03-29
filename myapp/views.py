@@ -6,6 +6,8 @@ import json
 import requests
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from decouple import config
+
 # from openai import api_key, Model
 import openai
 
@@ -29,7 +31,7 @@ def transcribe_audio(request):
             for chunk in audio.chunks():
                 destination.write(chunk)
 
-        openai.api_key = "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"
+        openai.api_key = config('api_key_ai') 
         audio_file= open(filename, "rb")
         transcript = openai.Audio.translate("whisper-1", audio_file)
         # with open(filename, 'wb') as f:
