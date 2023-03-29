@@ -25,6 +25,9 @@ def transcribe_audio(request):
         
             # Save the audio file to the 'audio' directory
             filename = 'audio/' + audio.name
+            newpath = r'audio' 
+            if not os.path.exists(newpath):
+                os.makedirs(newpath)
 
             # saveListToFile(list, filename)
             with open(filename, 'wb+') as destination:
