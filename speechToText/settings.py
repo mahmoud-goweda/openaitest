@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-f!8qhyyn6im@&rbawe-y&(5izsh(%@l&@t$imdk(qvh!vzdems
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://openai-speechtotext.herokuapp.com"]
 
 
 # Application definition
